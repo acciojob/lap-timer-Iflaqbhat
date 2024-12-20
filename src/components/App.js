@@ -66,7 +66,7 @@ const App = () => {
       <ul className="lap-list">
         {laps.map((lap, index) => (
           <li key={index}>
-            Lap {index + 1}: {formatTime(lap)}
+            <ul>{formatTime(lap)}</ul>
           </li>
         ))}
       </ul>
