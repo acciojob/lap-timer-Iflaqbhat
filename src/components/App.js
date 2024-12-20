@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./../styles/App.css";
 
 const App = () => {
@@ -56,18 +56,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Lap Timer</h1>
       <div className="timer-display">{formatTime(time)}</div>
       <div className="controls">
-        <button onClick={startTimer} disabled={isRunning}>
-          Start
-        </button>
-        <button onClick={stopTimer} disabled={!isRunning}>
-          Stop
-        </button>
-        <button onClick={recordLap} disabled={!isRunning}>
-          Lap
-        </button>
+        <button onClick={startTimer}>Start</button>
+        <button onClick={stopTimer}>Stop</button>
+        <button onClick={recordLap}>Lap</button>
         <button onClick={resetTimer}>Reset</button>
       </div>
       <ul className="lap-list">
