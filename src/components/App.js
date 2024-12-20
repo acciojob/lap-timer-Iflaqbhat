@@ -57,19 +57,29 @@ const App = () => {
   return (
     <div className="App">
       <div className="timer-display">{formatTime(time)}</div>
-      <div className="controls">
-        <button onClick={startTimer}>Start</button>
-        <button onClick={stopTimer}>Stop</button>
-        <button onClick={recordLap}>Lap</button>
-        <button onClick={resetTimer}>Reset</button>
+      <div>
+        <button id="start-btn" onClick={startTimer}>
+          Start
+        </button>
+        <button id="stop-btn" onClick={stopTimer}>
+          Stop
+        </button>
+        <button id="lap-btn" onClick={recordLap}>
+          Lap
+        </button>
+        <button id="reset-btn" onClick={resetTimer}>
+          Reset
+        </button>
       </div>
-      <ul className="lap-list">
-        {laps.map((lap, index) => (
-          <li key={index}>
-            <ul>{formatTime(lap)}</ul>
-          </li>
-        ))}
-      </ul>
+      <div id="laps">
+        <ul>
+          {laps.map((lap, index) => (
+            <li key={index}>
+              <ul>{formatTime(lap)}</ul>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
